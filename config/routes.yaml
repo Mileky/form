@@ -1,0 +1,8 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+form:
+    path: /
+    controller: ChuckNorris\Controller\FormController::main
+    methods: [GET, POST]

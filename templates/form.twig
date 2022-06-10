@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<form method="post">
+    <div>
+        <label>Почта</label>
+        <input type="email" name="email">
+    </div>
+    <div>
+        <label>Категория</label>
+        <select name="category">
+            {% for category in categories %}
+                <option value="{{ category.getCategory() }}">{{ category.getCategory() }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Отправить">
+    </div>
+</form>
+
+<div>
+    {% if errors is defined %}
+    <ul>
+        {% for error in errors %}
+            {{ error }}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if message is defined %}
+        {{ message }}
+    {% endif %}
+</div>
+</body>
+</html>
